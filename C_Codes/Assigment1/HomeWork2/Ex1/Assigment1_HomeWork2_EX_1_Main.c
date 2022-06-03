@@ -9,9 +9,6 @@ EX1:
 Write a c program to check whether the number is odd or even
 
 ###########################
-Enter two numbers: 2.4
-1.1
-Product: 2.640000
 
 ###########################
 
