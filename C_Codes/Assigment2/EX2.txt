@@ -12,11 +12,6 @@
  *
  *
  * */
-#define Size1 2
-#define Size2 2
-
-
-
 int main()
 {
 	int MyNumbers=0;
