@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+void ReverseString(char *string);
+int main(void)
+{
+	char MyString[200];
+	printf("Enter a Sentence: ");
+	fflush(stdout);
+	gets(MyString);
+	fflush(stdin);
+	printf("output: ");
+	ReverseString(MyString);
+	return 0;
+}
+void ReverseString(char *string)
+{
+	if(*string==0)
+		return;
+	else
+	{
+
+		ReverseString(string+1);
+		printf("%c",*string);
+	}
+}

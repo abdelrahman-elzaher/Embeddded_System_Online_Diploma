@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+int const ee=3;
+int IsPrime(int Number);
+void GeneretePrimeNumbersInterval(int Begin,int End);
+int main(void)
+{
+	int FirstNumber,LastNumber;
+	printf("Enter Two numbers(intevals)\n");
+	fflush(stdout);
+	scanf("%d%d",&FirstNumber,&LastNumber);
+	fflush(stdin);
+	GeneretePrimeNumbersInterval(FirstNumber,LastNumber);
+	return 0;
+}
+
+
+int IsPrime(int Number)
+{
+	if(Number<2)
+		return 0;
+	else
+	{
+		int i=0;
+		for(i=2;i<=Number/2;i++)
+		{
+			if(Number%i==0)
+				return 0;
+
+		}
+	}
+	return 1; //if it finish for loop without find a number can be divided by it
+
+}
+void GeneretePrimeNumbersInterval(int Begin,int End)
+{
+
+	printf("Prime Numbers between %d and %d are:",Begin,End);
+	for(Begin++;Begin<End;Begin++)
+		if(IsPrime(Begin))
+			printf(" %d",Begin);
+}

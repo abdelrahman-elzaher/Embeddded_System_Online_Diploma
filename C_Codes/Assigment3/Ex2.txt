@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+int FactorialNumber(int Number);
+int main(void)
+{
+	int Number;
+	printf("Enter A positive Enteger: ");
+	fflush(stdout);
+	scanf("%d",&Number);
+	printf("Factorial of %d is %d",Number,FactorialNumber(Number));
+	return 0;
+}
+int FactorialNumber(int Number)
+{
+	if(Number<=1)
+		return 1;
+	else
+		return Number*FactorialNumber(Number-1);
+}

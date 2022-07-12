@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+int PowerNumber( int BaseNumber,int Pow);
+int main(void)
+{
+	int BaseNumber;int Pow;
+	printf("Enter a base Number: ");
+	fflush(stdout);
+	scanf("%d",&BaseNumber);
+	fflush(stdin);
+	printf("Enter power Number(positive Integer):");
+	fflush(stdout);
+	scanf("%d",&Pow);
+	fflush(stdin);
+	printf("output is %d",PowerNumber(BaseNumber,Pow));
+
+
+	return 0;
+}
+int PowerNumber(int Number,int BaseNumber)
+{
+	if(BaseNumber<=0)
+		return 1;
+	else
+	{
+		return Number*PowerNumber(Number,BaseNumber-1);
+	}
+
+}
