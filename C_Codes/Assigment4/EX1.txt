@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct Sstudent
+{
+	char m_Name[100];
+	unsigned int m_RollNumber;
+	float m_Mark;
+};
+void ScanStudentInformation(struct Sstudent *p);
+void printStudentInformation(struct Sstudent *p);
+int main(void)
+{
+	struct Sstudent Student1;
+	ScanStudentInformation(&Student1);
+	printStudentInformation(&Student1);
+	return 0;
+}
+
+void ScanStudentInformation(struct Sstudent *p)
+{
+	printf("Enter Information of students\n");
+	printf("Enter name: ");
+	fflush(stdout);
+	scanf("%s",(p->m_Name));
+	fflush(stdin);
+	printf("Enter roll number: ");
+	fflush(stdout);
+	scanf("%d",&(p->m_RollNumber));
+	fflush(stdin);
+	printf("Enter marks: ");
+	fflush(stdout);
+	scanf("%f",&(p->m_Mark));
+	fflush(stdin);
+}
+void printStudentInformation(struct Sstudent *p)
+{
+	printf("Displaying information\n");
+	printf("name:%s \n",p->m_Name);
+	printf("roll: %d\n",p->m_RollNumber);
+	printf("marks:%f\n",p->m_Mark);
+}

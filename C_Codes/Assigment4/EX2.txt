@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct Sdistance
+{
+	int feet;
+	float inch;
+};
+void ScanDistance(char *Name,struct Sdistance *Distance);
+struct Sdistance SumDistance(struct Sdistance Distance1,struct Sdistance Distance2);
+int main(void)
+{
+	struct Sdistance Distance1,Distance2,Sum;
+	ScanDistance("Distance1",&Distance1);
+	ScanDistance("Distance2",&Distance2);
+	Sum=SumDistance(Distance1,Distance2);
+	printf("\n Sum Of Distances=%d\'-%f\"",Sum.feet,Sum.inch);
+}
+void ScanDistance(char *Name,struct Sdistance *Distance)
+{
+	printf("Enter information of %s \n",Name);
+	printf("Enter feet:");
+	fflush(stdout);
+	fflush(stdin);
+	scanf("%d",&(Distance->feet));
+	fflush(stdin);
+	fflush(stdout);
+	printf("Enter inch:");
+	fflush(stdin);
+	fflush(stdout);
+	scanf("%f",&(Distance->inch));
+}
+struct Sdistance SumDistance(struct Sdistance Distance1,struct Sdistance Distance2)
+{
+	struct Sdistance Sum;
+	Sum.feet=Distance1.feet+Distance2.feet;
+	Sum.inch=Distance1.inch+Distance2.inch;
+
+	if(Sum.inch>=(float)12)
+	{
+		while(Sum.inch>=(float)12)
+		{
+			Sum.inch-=(float)12;
+			Sum.feet+=1;
+		}
+	}
+	return Sum;
+}

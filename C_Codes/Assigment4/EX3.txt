@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct Scomplex
+{
+	float Real;
+	float Imaginary;
+};
+void ScanComplex(char *Name,struct Scomplex *Ptr);
+void PrintComplex(char *Name,struct Scomplex Complex);
+struct Scomplex ComplexSum(struct Scomplex Complex1,struct Scomplex Complex2);
+int main(void)
+{
+	struct Scomplex ComplexNumber1,ComplexNumber2,Sum;
+	ScanComplex("1st complex",&ComplexNumber1);
+	ScanComplex("2st complex",&ComplexNumber2);
+	Sum=ComplexSum(ComplexNumber1,ComplexNumber2);
+	PrintComplex("Sum",Sum);
+}
+void PrintComplex(char *Name,struct Scomplex Complex)
+{
+	printf("%s=%f+%fi",Name,Complex.Real,Complex.Imaginary);
+}
+
+void ScanComplex(char *Name,struct Scomplex *Ptr)
+{
+	printf("For %s \n",Name);
+	printf("Enter Real and imaganiry part respectively:");
+	fflush(stdout);
+	fflush(stdin);
+	scanf("%f%f",&(Ptr->Real),&(Ptr->Imaginary));
+}
+struct Scomplex ComplexSum(struct Scomplex Complex1,struct Scomplex Complex2)
+{
+	struct Scomplex Sum;
+	Sum.Real=Complex1.Real+Complex2.Real;
+	Sum.Imaginary=Complex1.Imaginary+Complex2.Imaginary;
+	return Sum;
+}
